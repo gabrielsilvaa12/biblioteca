@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saber Sem Barreiras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Saber Sem Barreiras</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#lancamentos">Lançamentos</a></li>
+                    <li><a href="#romance">Romance</a></li>
+                    <li><a href="#ficcao">Ficção</a></li>
+                    <li><a href="#faroeste">Faroeste</a></li>
+                </ul>
+            </nav>
+            <div class="nav-login">
+                <a href="#" class="btn btn-secondary">Login</a>
+                <a href="#" id="open-modal-btn" class="btn btn-primary">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Sua biblioteca digital inclusiva</h1>
+                    <p>Encontre livros, audiobooks e artigos. Navegue por um acervo pensado para todos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="container">
+                <h2>Navegue pelo Catálogo</h2>
+                <div class="card-grid">
+                    <a href="#romance" class="card category-card">
+                        <div class="card-icon">📚</div>
+                        <h3>Romances</h3>
+                        <p>Histórias que emocionam e cativam.</p>
+                    </a>
+                    <a href="#audiobooks" class="card category-card">
+                        <div class="card-icon">🎧</div>
+                        <h3>Audiobooks</h3>
+                        <p>Ouça seus livros favoritos em qualquer lugar.</p>
+                    </a>
+                    <a href="#ficcao" class="card category-card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Ficção Científica</h3>
+                        <p>Explore novos mundos e tecnologias.</p>
+                    </a>
+                    <a href="#faroeste" class="card category-card">
+                        <div class="card-icon">🤠</div>
+                        <h3>Faroeste</h3>
+                        <p>Aventuras no Velho Oeste.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="lancamentos" class="livro-secao">
+            <div class="container">
+                <h2>Lançamentos</h2>
+                <div class="livros-grid"></div>
+            </div>
+        </section>
+
+        <section id="romance" class="livro-secao">
+            <div class="container">
+                <h2>Romance</h2>
+                <div class="livros-grid"></div>
+            </div>
+        </section>
+
+        <section id="ficcao" class="livro-secao">
+            <div class="container">
+                <h2>Ficção Científica</h2>
+                <div class="livros-grid"></div>
+            </div>
+        </section>
+
+        <section id="faroeste" class="livro-secao">
+            <div class="container">
+                <h2>Faroeste</h2>
+                <div class="livros-grid"></div>
+            </div>
+        </section>
+
+        <section id="audiobooks" class="livro-secao">
+            <div class="container">
+                <h2>Audiobooks</h2>
+                <div class="livros-grid"></div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Junte-se à nossa comunidade</h2>
+                <p>Cadastre-se para receber novidades, recomendações e acesso a conteúdos exclusivos.</p>
+                <a href="#" id="open-modal-btn" class="btn btn-cta">Criar minha conta</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="registro-modal-overlay" class="modal-overlay">
+        <div id="registro-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <div class="modal-header">
+                <h2 id="modal-titulo">Crie sua Conta</h2>
+                <button id="modal-close-btn" class="modal-close-btn" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="registro-form">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" name="sobrenome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit-btn">Criar conta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Saber Sem Barreiras. Um projeto focado em acessibilidade.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
