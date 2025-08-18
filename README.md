@@ -66,7 +66,6 @@ git clone https://github.com/gabrielsilvaa12/biblioteca.git
 
 # Acesse a pasta do projeto
 cd biblioteca
-´´´
-
+````
 ## 👨‍💻 Autor
 Gabriel Aparecido da Silva
