@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-margin-top: 100px; 
+    scroll-margin-top: 100px;
 }
 
 :root {
@@ -51,10 +51,37 @@ h2 {
     text-align: center;
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible {
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
     outline: 3px solid var(--accent-color);
     outline-offset: 2px;
     border-radius: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px;
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
 .btn {
@@ -68,13 +95,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     text-align: center;
 }
-.btn:hover { transform: translateY(-2px); }
 
-.btn-primary {
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btnPrimary {
     background-color: var(--accent-color);
     color: white;
 }
-.btn-primary:hover {
+
+.btnPrimary:hover {
     background-color: var(--accent-color-darker);
     color: white;
 }
@@ -84,12 +115,13 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     color: var(--accent-color);
     border-color: var(--border-color);
 }
+
 .btn-secondary:hover {
     background-color: #f0f0f0;
 }
 
 .navbar {
-    padding: 15px 0;
+    padding: 10px 0;
     border-bottom: 1px solid var(--border-color);
     background-color: rgba(253, 253, 253, 0.95);
     backdrop-filter: blur(5px);
@@ -97,43 +129,110 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     top: 0;
     z-index: 1000;
 }
-.navbar .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: var(--font-secondary); font-size: 1.5rem; font-weight: 700; color: var(--text-color); }
-.nav-links { display: flex; list-style: none; gap: 30px; }
-.nav-auth { display: flex; gap: 15px; }
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-secondary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navLinks {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navLinks a {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.navLogin {
+    display: flex;
+    gap: 30px;
+}
 
 .hero {
     text-align: center;
     padding: 80px 0;
     background: linear-gradient(180deg, #EBF4FF 0%, var(--bg-color) 70%);
 }
-.hero h1 { font-family: var(--font-secondary); font-size: 3.5rem; max-width: 800px; margin: 0 auto 1rem; }
-.hero p { font-size: 1.25rem; color: #555; max-width: 600px; margin: 0 auto; }
 
-.catalog { padding: 60px 0; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.hero h1 {
+    font-family: var(--font-secondary);
+    font-size: 3.5rem;
+    max-width: 800px;
+    margin: 0 auto 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.catalog {
+    padding: 60px 0;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     color: var(--text-color);
 }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
-.card-icon { font-size: 3rem; margin-bottom: 1rem; }
-.card h3 { font-family: var(--font-secondary); font-size: 1.5rem; margin-bottom: 0.5rem; }
-.card p { color: #555; }
-.livro-secao { padding: 60px 0; }
-.livro-secao:nth-of-type(even) { background-color: var(--bg-color-alt); }
 
-.livro-secao .livros-grid {
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #555;
+}
+
+.livroSecao {
+    padding: 60px 0;
+}
+
+.livroSecao:nth-of-type(even) {
+    background-color: var(--bg-color-alt);
+}
+
+.livroSecao .livrosGrid {
     display: flex;
     gap: 30px;
-    overflow-x: auto; 
-    padding: 4px 0 20px 4px; 
+    overflow-x: auto;
+    padding: 4px 0 20px 4px;
     margin-left: -4px;
     justify-content: center;
 }
@@ -142,57 +241,105 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     text-align: left;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 280px;      
-    flex-shrink: 0;    
+    width: 280px;
+    flex-shrink: 0;
 }
-.livro-card img { width: 100%; height: 250px; object-fit: cover; }
-.livro-card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-.livro-card-content h3 { font-family: var(--font-secondary); font-size: 1.2rem; margin-bottom: 5px; text-align: left; }
-.livro-card-content p { color: #777; font-size: 0.9rem; margin-bottom: 15px; }
-.livro-card-content .btn { margin-top: auto; }
 
-.cta-section {
+.livro-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+.livro-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.livro-card-content h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.livro-card-content p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.livro-card-content .btn {
+    margin-top: auto;
+}
+
+.ctaSection {
     padding: 80px 0;
     text-align: center;
     background-color: var(--accent-color);
     color: white;
 }
-.cta-section h2 { color: white; }
-.cta-section p { max-width: 500px; margin: -20px auto 30px; opacity: 0.9; }
-.btn-cta {
+
+.ctaSection h2 {
+    color: white;
+}
+
+.ctaSection p {
+    max-width: 500px;
+    margin: -20px auto 30px;
+    opacity: 0.9;
+}
+
+.btnCta {
     background-color: white;
     color: var(--accent-color);
     padding: 15px 30px;
     font-size: 1.1rem;
 }
-.btn-cta:hover { background-color: #f0f0f0; color: var(--accent-color-darker); }
 
-.footer { text-align: center; padding: 40px 0; }
-
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .nav-links, .nav-auth { display: none; }
+.btnCta:hover {
+    background-color: #f0f0f0;
+    color: var(--accent-color-darker);
 }
 
-.modal-overlay {
+.footer {
+    text-align: center;
+    padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .navLinks,
+    .navLogin {
+        display: none;
+    }
+
+}
+
+.modalOverflay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
-    display: none; 
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 2000;
 }
 
-.modal-overlay.visible {
+.modalOverflay.visible {
     display: flex;
 }
 
@@ -200,13 +347,13 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 500px;
     position: relative;
 }
 
-.modal-header {
+.modalHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -215,12 +362,12 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     margin-bottom: 20px;
 }
 
-.modal-header h2 {
+.modalHeader h2 {
     font-size: 1.8rem;
     margin: 0;
 }
 
-.modal-close-btn {
+.modalCloseBtn {
     background: none;
     border: none;
     font-size: 2.5rem;
@@ -229,17 +376,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     color: #888;
 }
 
-.form-group {
+.formGrupo {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.formGrupo label {
     display: block;
     margin-bottom: 5px;
     font-weight: 700;
 }
 
-.form-group input {
+.formGrupo input {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
@@ -247,8 +394,182 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     font-size: 1rem;
 }
 
-.form-submit-btn {
+.formSubmitBtn {
     width: 100%;
     padding: 15px;
     font-size: 1.1rem;
+}
+
+.widgetAcessivel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+#btnAcessivel {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.painelAcessivel {
+    display: none;
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 200px;
+    overflow: hidden;
+}
+
+.painelAcessivel.visible {
+    display: block;
+}
+
+.painelAcessivel button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    cursor: pointer;
+}
+
+.painelAcessivel button:hover {
+    background-color: #f0f0f0;
+}
+
+.painelAcessivel button:last-child {
+    border-bottom: none;
+}
+
+body.high-contrast {
+    --bg-color: #000000;
+    --bg-color-alt: #000000;
+    --text-color: #FFFFFF;
+    --accent-color: #3399FF;
+    --accent-color-darker: #1E88E5;
+    --card-bg: #121212;
+    --border-color: #CCCCCC;
+}
+
+body.high-contrast .hero,
+body.high-contrast .livroSecao:nth-of-type(even) {
+    background: var(--bg-color);
+}
+
+body.high-contrast .hero p,
+body.high-contrast .card p,
+body.high-contrast .livro-card-content p,
+body.high-contrast .footer,
+body.high-contrast .logo,
+body.high-contrast .modalCloseBtn,
+body.high-contrast .formGrupo label {
+    color: var(--text-color);
+}
+
+body.high-contrast .btn-secondary:hover {
+    background-color: #333;
+}
+
+body.high-contrast .navbar {
+    background-color: #121212;
+    border-bottom-color: var(--border-color);
+}
+
+body.high-contrast .modal {
+    background-color: #121212;
+    border: 1px solid var(--border-color);
+}
+
+body.high-contrast .modalHeader {
+    border-bottom-color: var(--border-color);
+}
+
+body.high-contrast .formGrupo input {
+    background-color: #000;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+body.high-contrast .ctaSection {
+    background-color: #000;
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+body.high-contrast .btnCta {
+    color: #000;
+    background-color: var(--accent-color);
+}
+
+body.high-contrast .btnCta:hover {
+    color: #000;
+    background-color: var(--accent-color-darker);
+}
+
+body.high-contrast .painelAcessivel {
+    background-color: #121212;
+    border: 1px solid var(--border-color);
+}
+
+body.high-contrast .painelAcessivel button {
+    color: var(--text-color);
+    border-bottom-color: var(--border-color);
+}
+
+body.high-contrast .painelAcessivel button:hover {
+    background-color: #333;
+}
+
+.modalCloseBody {
+    display: flex;
+    gap: 20px;
+}
+
+.modalCloseBody img {
+    width: 150px;
+    height: auto;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.modalCloseBody h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.modalCloseBody p {
+    line-height: 1.7;
+}
+
+@media (max-width: 500px) {
+    .modalCloseBody {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+.logo img {
+    height: 150px;    width: auto;
+    display: block; 
+}
+
+#btnAcessivel img {
+    width: 35px;  
+    height: 35px;
+    vertical-align: middle; 
 }

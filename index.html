@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saber Sem Barreiras</title>
+    <title>SaberLivre</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,20 +16,34 @@
 
 <body>
 
+    <div class="widgetAcessivel">
+        <button id="btnAcessivel" aria-label="Abrir menu de acessibilidade">
+            <img src="img/acessibilidade.png" alt="Ícone de Acessibilidade Universal">
+        </button>
+        <div id="painelAcessivel" class="painelAcessivel">
+            <button id="increase-font">Aumentar Fonte (A+)</button>
+            <button id="decrease-font">Diminuir Fonte (A-)</button>
+            <button id="high-contrast">Alto Contraste</button>
+        </div>
+    </div>
+
+
     <header class="navbar">
         <div class="container">
-            <a href="#" class="logo">Saber Sem Barreiras</a>
+            <a href="#" class="logo">
+                <img src="img/Acessa Livro (1).png" alt="Logo SaberLivre">
+            </a>
             <nav>
-                <ul class="nav-links">
+                <ul class="navLinks">
                     <li><a href="#lancamentos">Lançamentos</a></li>
                     <li><a href="#romance">Romance</a></li>
                     <li><a href="#ficcao">Ficção</a></li>
                     <li><a href="#faroeste">Faroeste</a></li>
                 </ul>
             </nav>
-            <div class="nav-login">
+            <div class="navLogin">
                 <a href="#" class="btn btn-secondary">Login</a>
-                <a href="#" id="open-modal-btn" class="btn btn-primary">Cadastre-se</a>
+                <a href="#" class="btn btnPrimary modalBtn">Cadastre-se</a>
             </div>
         </div>
     </header>
@@ -37,7 +51,7 @@
     <main>
         <section class="hero">
             <div class="container">
-                <div class="hero-content">
+                <div class="heroContent">
                     <h1>Sua biblioteca digital inclusiva</h1>
                     <p>Encontre livros, audiobooks e artigos. Navegue por um acervo pensado para todos.</p>
                 </div>
@@ -47,23 +61,23 @@
         <section class="catalog">
             <div class="container">
                 <h2>Navegue pelo Catálogo</h2>
-                <div class="card-grid">
-                    <a href="#romance" class="card category-card">
-                        <div class="card-icon">📚</div>
+                <div class="cardGrid">
+                    <a href="#romance" class="card cardCategory">
+                        <div class="card-icon">👩‍❤️‍👨</div>
                         <h3>Romances</h3>
                         <p>Histórias que emocionam e cativam.</p>
                     </a>
-                    <a href="#audiobooks" class="card category-card">
+                    <a href="#audiobooks" class="card cardCategory">
                         <div class="card-icon">🎧</div>
                         <h3>Audiobooks</h3>
                         <p>Ouça seus livros favoritos em qualquer lugar.</p>
                     </a>
-                    <a href="#ficcao" class="card category-card">
+                    <a href="#ficcao" class="card cardCategory">
                         <div class="card-icon">🚀</div>
                         <h3>Ficção Científica</h3>
                         <p>Explore novos mundos e tecnologias.</p>
                     </a>
-                    <a href="#faroeste" class="card category-card">
+                    <a href="#faroeste" class="card cardCategory">
                         <div class="card-icon">🤠</div>
                         <h3>Faroeste</h3>
                         <p>Aventuras no Velho Oeste.</p>
@@ -72,75 +86,86 @@
             </div>
         </section>
 
-        <section id="lancamentos" class="livro-secao">
+        <section id="lancamentos" class="livroSecao">
             <div class="container">
                 <h2>Lançamentos</h2>
-                <div class="livros-grid"></div>
+                <div class="livrosGrid"></div>
             </div>
         </section>
 
-        <section id="romance" class="livro-secao">
+        <section id="romance" class="livroSecao">
             <div class="container">
                 <h2>Romance</h2>
-                <div class="livros-grid"></div>
+                <div class="livrosGrid"></div>
             </div>
         </section>
 
-        <section id="ficcao" class="livro-secao">
+        <section id="ficcao" class="livroSecao">
             <div class="container">
                 <h2>Ficção Científica</h2>
-                <div class="livros-grid"></div>
+                <div class="livrosGrid"></div>
             </div>
         </section>
 
-        <section id="faroeste" class="livro-secao">
+        <section id="faroeste" class="livroSecao">
             <div class="container">
                 <h2>Faroeste</h2>
-                <div class="livros-grid"></div>
+                <div class="livrosGrid"></div>
             </div>
         </section>
 
-        <section id="audiobooks" class="livro-secao">
+        <section id="audiobooks" class="livroSecao">
             <div class="container">
                 <h2>Audiobooks</h2>
-                <div class="livros-grid"></div>
+                <div class="livrosGrid"></div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <section class="ctaSection">
             <div class="container">
                 <h2>Junte-se à nossa comunidade</h2>
                 <p>Cadastre-se para receber novidades, recomendações e acesso a conteúdos exclusivos.</p>
-                <a href="#" id="open-modal-btn" class="btn btn-cta">Criar minha conta</a>
+                <a href="#" class="btn btnCta modalBtn">Criar minha conta</a>
             </div>
         </section>
     </main>
 
-    <div id="registro-modal-overlay" class="modal-overlay">
-        <div id="registro-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
-            <div class="modal-header">
-                <h2 id="modal-titulo">Crie sua Conta</h2>
-                <button id="modal-close-btn" class="modal-close-btn" aria-label="Fechar modal">&times;</button>
+    <div id="livroModalOverflay" class="modalOverflay">
+        <div id="livro-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+            <div class="modalHeader">
+                <h2 id="modalTitulo">Detalhes do Livro</h2>
+                <button id="livroModalCloseBtn" class="modalCloseBtn" aria-label="Fechar modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <form id="registro-form">
-                    <div class="form-group">
+            <div id="modalCloseBody" class="modalCloseBody">
+            </div>
+        </div>
+    </div>
+
+    <div id="registroModalOverflay" class="modalOverflay">
+        <div id="registroModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+            <div class="modalHeader">
+                <h2 id="modal-titulo">Crie sua Conta</h2>
+                <button id="modalCloseBtn" class="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+            </div>
+            <div class="modalBody">
+                <form id="registroForm">
+                    <div class="formGrupo">
                         <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" required>
                     </div>
-                    <div class="form-group">
+                    <div class="formGrupo">
                         <label for="sobrenome">Sobrenome</label>
                         <input type="text" id="sobrenome" name="sobrenome" required>
                     </div>
-                    <div class="form-group">
+                    <div class="formGrupo">
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="form-group">
+                    <div class="formGrupo">
                         <label for="senha">Senha</label>
                         <input type="password" id="senha" name="senha" required>
                     </div>
-                    <button type="submit" class="btn btn-primary form-submit-btn">Criar conta</button>
+                    <button type="submit" class="btn btnPrimary formSubmitBtn">Criar conta</button>
                 </form>
             </div>
         </div>
@@ -148,7 +173,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Saber Sem Barreiras. Um projeto focado em acessibilidade.</p>
+            <p>&copy; 2025 SaberLivre. Um projeto focado em acessibilidade.</p>
         </div>
     </footer>
 
