@@ -314,18 +314,6 @@ input:focus-visible {
     padding: 40px 0;
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .navLinks,
-    .navLogin {
-        display: none;
-    }
-
-}
-
 .modalOverflay {
     position: fixed;
     top: 0;
@@ -555,21 +543,48 @@ body.high-contrast .painelAcessivel button:hover {
     line-height: 1.7;
 }
 
+.logo img {
+    height: 150px;
+    width: auto;
+    display: block;
+}
+
+#btnAcessivel img {
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .navLinks,
+    .navLogin {
+        display: none;
+    }
+
+    /* ADICIONE AS REGRAS ABAIXO */
+    .navbar .container {
+        justify-content: center; /* Centraliza a logo */
+    }
+
+    .livroSecao .container {
+        padding: 0; /* Remove o padding do container para a grade rolar de ponta a ponta */
+    }
+
+    .livroSecao .livrosGrid {
+        justify-content: flex-start; /* Alinha os livros à esquerda */
+        padding-left: 20px; /* Adiciona um espaçamento inicial */
+        padding-right: 20px; /* Adiciona um espaçamento final para não cortar o último livro */
+    }
+}
+
 @media (max-width: 500px) {
     .modalCloseBody {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
-}
-
-.logo img {
-    height: 150px;    width: auto;
-    display: block; 
-}
-
-#btnAcessivel img {
-    width: 35px;  
-    height: 35px;
-    vertical-align: middle; 
 }
