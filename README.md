@@ -52,8 +52,6 @@ O layout foi planejado para ser:
 - Com bastante espaço em branco para reduzir carga cognitiva.  
 - Com paleta de cores de **alto contraste**, em conformidade com as diretrizes **WCAG**.  
 
-> 💡 Sugestão: tire um print da tela inteira e salve na pasta `/img` para documentar o layout.  
-
 ---
 
 ## 🚀 Como Executar o Projeto  
