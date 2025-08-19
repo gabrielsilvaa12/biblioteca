@@ -565,19 +565,19 @@ body.high-contrast .painelAcessivel button:hover {
         display: none;
     }
 
-    /* REGRAS CORRIGIDAS E ADICIONADAS ABAIXO */
+    
     .navbar .container {
-        justify-content: center; /* Centraliza a logo quando os outros itens somem */
+        justify-content: center; 
     }
 
     .livroSecao .container {
-        padding: 0; /* Remove o padding lateral para a grade rolar de ponta a ponta */
+        padding: 0; 
     }
 
     .livroSecao .livrosGrid {
-        justify-content: flex-start; /* Alinha os livros à esquerda para um início de rolagem natural */
-        padding-left: 20px;  /* Adiciona um espaçamento inicial para não colar na borda */
-        padding-right: 20px; /* Adiciona um espaçamento final para não cortar o último livro */
+        justify-content: flex-start; 
+        padding-left: 20px;  
+        padding-right: 20px; 
     }
 }
 
