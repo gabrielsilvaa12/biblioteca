@@ -6,7 +6,7 @@ O *SaberLivre* foi desenvolvido para garantir que todos os usuários, independen
 ---
 
 ✨ **Veja o site ao vivo aqui!**  
-*(Substitua este link pelo seu link do GitHub Pages quando estiver no ar)*  
+https://gabrielsilvaa12.github.io/biblioteca/#  
 
 ---
 
