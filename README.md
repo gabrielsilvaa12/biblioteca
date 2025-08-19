@@ -6,7 +6,7 @@ O *SaberLivre* foi desenvolvido para garantir que todos os usuários, independen
 ---
 
 ✨ **Veja o site ao vivo aqui!**  
-*(Substitua este link pelo seu link do GitHub Pages quando estiver no ar)*  
+https://gabrielsilvaa12.github.io/biblioteca/#  
 
 ---
 
@@ -51,8 +51,6 @@ O layout foi planejado para ser:
 - Limpo e intuitivo.  
 - Com bastante espaço em branco para reduzir carga cognitiva.  
 - Com paleta de cores de **alto contraste**, em conformidade com as diretrizes **WCAG**.  
-
-> 💡 Sugestão: tire um print da tela inteira e salve na pasta `/img` para documentar o layout.  
 
 ---
 
